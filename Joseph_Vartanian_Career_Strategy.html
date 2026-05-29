@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Joseph Vartanian — Career Strategy</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600&family=Spline+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#1a1714;
+  --ink-soft:#5a5249;
+  --ink-faint:#8a8076;
+  --paper:#f4efe6;
+  --paper-2:#ece4d6;
+  --card:#fbf8f1;
+  --line:#d8cfbf;
+  --line-soft:#e4dccd;
+  --hot:#bf4a23;
+  --warm:#c4881a;
+  --build:#5c7a2a;
+  --skill:#5b4fb0;
+  --convo:#2f6aa8;
+  --hot-bg:#f6e4da;
+  --warm-bg:#f7ecd4;
+  --build-bg:#e8efd9;
+  --skill-bg:#e9e6f7;
+  --convo-bg:#dfeaf6;
+  --cv-bg:#e8efd9;
+  --cv-ink:#46611e;
+  --link-bg:#e9e6f7;
+  --link-ink:#473e8f;
+  --serif:'Fraunces',Georgia,serif;
+  --sans:'Spline Sans',system-ui,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--sans);
+  line-height:1.6;
+  background-image:radial-gradient(circle at 1px 1px, rgba(120,105,85,.06) 1px, transparent 0);
+  background-size:22px 22px;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1180px;margin:0 auto;padding:0 28px 80px}
+
+/* Header */
+header{padding:54px 0 30px;border-bottom:1.5px solid var(--ink);margin-bottom:34px;position:relative}
+.eyebrow{font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--ink-faint);font-weight:500}
+h1{font-family:var(--serif);font-weight:400;font-size:clamp(40px,7vw,76px);line-height:.95;letter-spacing:-.02em;margin:14px 0 8px}
+h1 em{font-style:italic;color:var(--hot)}
+.sub{font-size:16px;color:var(--ink-soft);max-width:600px}
+.meta-row{display:flex;flex-wrap:wrap;gap:8px 22px;margin-top:22px;font-size:13px;color:var(--ink-soft)}
+.meta-row span{display:inline-flex;align-items:center;gap:7px}
+.meta-row b{font-weight:500;color:var(--ink)}
+.dot-mini{width:6px;height:6px;border-radius:50%;background:var(--hot)}
+
+/* Filter bar */
+.filters{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 30px;align-items:center}
+.filters .flabel{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-right:6px}
+.chip{font-family:var(--sans);font-size:13px;font-weight:500;padding:7px 15px;border:1px solid var(--line);background:var(--card);color:var(--ink-soft);border-radius:99px;cursor:pointer;transition:all .18s}
+.chip:hover{border-color:var(--ink-soft);color:var(--ink)}
+.chip.on{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+
+/* Columns */
+.grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+.col-head{display:flex;align-items:center;gap:9px;font-family:var(--serif);font-size:19px;font-weight:500;margin:0 0 4px;padding-bottom:10px;border-bottom:1px solid var(--line)}
+.col-head .badge-n{margin-left:auto;font-family:var(--sans);font-size:11px;font-weight:500;background:var(--paper-2);color:var(--ink-soft);padding:2px 9px;border-radius:99px}
+.swatch{width:11px;height:11px;border-radius:3px}
+
+/* Cards */
+.card{background:var(--card);border:1px solid var(--line-soft);border-radius:14px;padding:16px 17px;margin-top:13px;cursor:pointer;transition:transform .18s,box-shadow .18s,border-color .18s,opacity .25s;position:relative;overflow:hidden}
+.card::before{content:"";position:absolute;left:0;top:0;bottom:0;width:4px;background:var(--accent,transparent);transition:width .18s}
+.card:hover{transform:translateY(-3px);box-shadow:0 12px 30px -14px rgba(60,45,25,.4);border-color:var(--line)}
+.card:hover::before{width:6px}
+.card.dim{opacity:.28;filter:grayscale(.4)}
+.card.dim:hover{transform:none;box-shadow:none}
+.tag{font-size:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;padding:3px 9px;border-radius:99px;display:inline-block;margin-bottom:9px}
+.card h3{font-family:var(--serif);font-weight:500;font-size:18px;line-height:1.2;letter-spacing:-.01em}
+.card .where{font-size:12.5px;color:var(--ink-soft);margin-top:4px}
+.cvtag{display:inline-flex;align-items:center;gap:5px;font-size:10.5px;font-weight:500;padding:3px 9px;border-radius:99px;margin-top:11px}
+.cvtag.cv{background:var(--cv-bg);color:var(--cv-ink)}
+.cvtag.lnk{background:var(--link-bg);color:var(--link-ink)}
+.cvtag svg{width:11px;height:11px}
+.prog{height:5px;background:var(--line-soft);border-radius:99px;margin-top:11px;overflow:hidden}
+.prog i{display:block;height:100%;background:var(--skill);border-radius:99px;width:0;transition:width 1s ease .3s}
+
+/* Detail drawer */
+.scrim{position:fixed;inset:0;background:rgba(26,23,20,.46);backdrop-filter:blur(3px);opacity:0;pointer-events:none;transition:opacity .28s;z-index:40}
+.scrim.show{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;right:0;bottom:0;width:min(520px,92vw);background:var(--paper);border-left:1.5px solid var(--ink);transform:translateX(102%);transition:transform .34s cubic-bezier(.4,0,.1,1);z-index:50;overflow-y:auto;padding:38px 38px 60px}
+.drawer.show{transform:translateX(0)}
+.drawer .close{position:absolute;top:24px;right:24px;width:36px;height:36px;border-radius:50%;border:1px solid var(--line);background:var(--card);cursor:pointer;font-size:20px;color:var(--ink-soft);display:flex;align-items:center;justify-content:center;transition:all .15s}
+.drawer .close:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.d-kicker{font-size:11px;letter-spacing:.22em;text-transform:uppercase;font-weight:500}
+.drawer h2{font-family:var(--serif);font-weight:500;font-size:30px;line-height:1.05;letter-spacing:-.02em;margin:10px 0 16px}
+.d-body{font-size:15px;color:var(--ink-soft);line-height:1.72}
+.d-badges{display:flex;flex-wrap:wrap;gap:7px;margin:20px 0}
+.d-badge{font-size:11.5px;padding:5px 11px;border-radius:99px;background:var(--card);border:1px solid var(--line);color:var(--ink-soft);display:inline-flex;align-items:center;gap:5px}
+.d-badge.cv{background:var(--cv-bg);border-color:#c7d6a8;color:var(--cv-ink)}
+.d-badge.lnk{background:var(--link-bg);border-color:#c6bff0;color:var(--link-ink)}
+.d-badge svg{width:11px;height:11px}
+.cvbox{background:var(--card);border:1px solid var(--line);border-left:4px solid var(--build);border-radius:0 12px 12px 0;padding:15px 17px;margin-top:18px}
+.cvbox .lbl{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--cv-ink);font-weight:600;display:flex;align-items:center;gap:6px;margin-bottom:7px}
+.cvbox p{font-family:var(--serif);font-style:italic;font-size:15px;color:var(--ink);line-height:1.6}
+.d-next{display:block;width:100%;margin-top:22px;padding:14px 18px;background:var(--ink);color:var(--paper);border:none;border-radius:12px;font-family:var(--sans);font-size:14px;font-weight:500;cursor:pointer;text-align:left;display:flex;align-items:center;gap:10px;transition:background .18s}
+.d-next:hover{background:var(--hot)}
+.d-next svg{width:18px;height:18px;flex-shrink:0}
+
+/* Footer note */
+.legend{display:flex;flex-wrap:wrap;gap:18px;margin-top:40px;padding-top:22px;border-top:1px solid var(--line);font-size:12.5px;color:var(--ink-soft)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend .sq{width:12px;height:12px;border-radius:3px}
+
+@media(max-width:920px){.grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.grid{grid-template-columns:1fr}.wrap{padding:0 18px 60px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="eyebrow">Career strategy dossier · May 2026</div>
+  <h1>Joseph <em>Vartanian</em></h1>
+  <p class="sub">Business &amp; brand strategist with an ESG specialism and a creative agency pedigree — mapping the path from London into Europe's design and PR world.</p>
+  <div class="meta-row">
+    <span><span class="dot-mini"></span><b>London</b>, UK</span>
+    <span><b>Babson College</b> · 2024</span>
+    <span><b>EN · PT</b> fluent · <b>IT</b> in progress</span>
+    <span><b>ESG</b> · B Corp specialist</span>
+  </div>
+</header>
+
+<div class="filters">
+  <span class="flabel">Filter</span>
+  <button class="chip on" data-f="all">Everything</button>
+  <button class="chip" data-f="lead">Leads</button>
+  <button class="chip" data-f="convo">Conversations</button>
+  <button class="chip" data-f="skill">Skills</button>
+  <button class="chip" data-f="strength">CV strengths</button>
+  <button class="chip" data-f="cvlinked">★ CV-linked</button>
+</div>
+
+<div class="grid" id="grid"></div>
+
+<div class="legend">
+  <span><span class="sq" style="background:var(--hot)"></span>Lead</span>
+  <span><span class="sq" style="background:var(--convo)"></span>Conversation</span>
+  <span><span class="sq" style="background:var(--skill)"></span>Skill to build</span>
+  <span><span class="sq" style="background:var(--build)"></span>CV strength</span>
+  <span style="margin-left:auto">Green badges = direct CV link · Purple = strategic connection</span>
+</div>
+
+</div>
+
+<div class="scrim" id="scrim" onclick="closeDrawer()"></div>
+<aside class="drawer" id="drawer">
+  <button class="close" onclick="closeDrawer()">×</button>
+  <div id="drawer-content"></div>
+</aside>
+
+<script>
+const ICON_LINK='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10 13a5 5 0 0 0 7 0l3-3a5 5 0 0 0-7-7l-1 1"/><path d="M14 11a5 5 0 0 0-7 0l-3 3a5 5 0 0 0 7 7l1-1"/></svg>';
+const ICON_CV='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="2"/><path d="M15 8h3M15 12h3M7 16h10"/></svg>';
+const ICON_ARROW='<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>';
+
+const COLS=[
+  {cat:'lead',title:'Leads',color:'var(--hot)'},
+  {cat:'convo',title:'Conversations',color:'var(--convo)'},
+  {cat:'skill',title:'Skills to build',color:'var(--skill)'},
+  {cat:'strength',title:'CV strengths',color:'var(--build)'}
+];
+
+const ITEMS=[
+  {id:'tatil',cat:'lead',accent:'var(--hot)',tag:{t:'🔥 Hot — UK',bg:'var(--hot-bg)',c:'var(--hot)'},title:'Tátil Design',where:'London · Visa sponsor · Ambev overlap',cvlinked:true,foot:{type:'cv',t:'Ambev + Africa in CV'},
+    kicker:'Hottest lead — UK',body:'Your CV is unusually well-matched here. You worked at Ambev — one of Tátil\'s biggest clients — so you understand their work from the client side. You also worked at Agencia Africa in branding and special projects, showing you can operate inside a creative agency. Add the warm intro via Colirio Design and this becomes a strong pitch, not a cold approach.',
+    badges:[{t:'Ambev intern (2022)',k:'cv'},{t:'Agencia Africa (2019)',k:'cv'},{t:'Warm intro via Colirio',k:'lnk'},{t:'Visa sponsorship',k:''},{t:'Babson credibility',k:'cv'}],
+    cv:'At Ambev you did B Corp research alongside marketing and procurement. At Agencia Africa you worked on the Heinz special project. Both are direct talking points for a Tátil introduction.',
+    prompt:'Help me write a compelling intro message to Tátil Design — I worked at Ambev (their client) and at Agencia Africa, and have a mutual contact via Colirio Design'},
+
+  {id:'ted',cat:'lead',accent:'var(--warm)',tag:{t:'Warm — Italy',bg:'var(--warm-bg)',c:'var(--warm)'},title:'Ted Gushue',where:'Cars, design & writing · Long game',cvlinked:true,foot:{type:'cv',t:'Africa creative work'},
+    kicker:'Italy long game',body:'The Africa experience is your strongest card here. You worked on a real high-budget creative project — the award-winning Heinz Mars Edition — sourced specialist professionals internationally, and built presentations for a CEO. That\'s not just "I love cars and design"; it\'s evidence you can execute in a creative environment. Lead with genuine curiosity and that Africa story.',
+    badges:[{t:'Heinz Mars Edition',k:'cv'},{t:'Creative execution',k:'cv'},{t:'Italian (6-month goal)',k:'lnk'},{t:'Writing ambition',k:''}],
+    cv:'The Heinz Mars Edition campaign you helped build at Africa won awards and involved sourcing real scientists. It\'s a fascinating opener for a genuine conversation.',
+    prompt:'Help me craft a first message to Ted Gushue — I want to connect over cars and design and share my background working on the award-winning Heinz Mars Edition campaign'},
+
+  {id:'azzi',cat:'lead',accent:'var(--build)',tag:{t:'Building — Remote',bg:'var(--build-bg)',c:'var(--build)'},title:'AZZI & CO',where:'US–Europe bridge · PR agency',cvlinked:true,foot:{type:'lnk',t:'Babson + Europe base'},
+    kicker:'Building the bridge role',body:'Your value proposition here is geography plus credibility. You\'re already in London, you studied at Babson (US credibility), you have Latam roots and network, and your ESG background gives Rafael a differentiator when pitching European clients who care about it. The bridge angle is real, not invented — but it needs cultivation before it becomes a live role.',
+    badges:[{t:'London-based',k:'cv'},{t:'Babson College',k:'cv'},{t:'ESG expertise',k:'cv'},{t:'Latam network',k:''},{t:'Personal relationship',k:'lnk'}],
+    cv:'Babson\'s entrepreneurship reputation + your On Running internship in Zurich + a London address = you\'re already the US-educated, Europe-based, Latam-connected person Rafael needs.',
+    prompt:'Help me think through how to pitch myself to Rafael Azzi as his Europe bridge — what should I be saying in our conversations to plant that seed?'},
+
+  {id:'sergio',cat:'convo',accent:'var(--convo)',tag:{t:'Active',bg:'var(--convo-bg)',c:'var(--convo)'},title:'Sergio Gordilho',where:'CEO, Agencia Africa · First boss',cvlinked:true,foot:{type:'cv',t:'July 2019 — directly'},
+    kicker:'Mentor & advisor',body:'You actually worked under him in July 2019 on the Heinz Mars Edition project. This isn\'t a cold call — it\'s a former boss who saw you execute on a real brief at a young age. He knows your creative capability firsthand. Use these conversations to get his honest read on the market, ask for warm intros, and pressure-test your positioning.',
+    badges:[{t:'Direct work history (2019)',k:'cv'},{t:'Heinz Mars Edition together',k:'cv'},{t:'Industry veteran',k:''},{t:'Intro potential',k:'lnk'}],
+    cv:'You assembled presentations and cost files directly for him as CEO. He knows your work ethic and creative instinct from real experience.',
+    prompt:'What should I ask Sergio Gordilho — my former boss at Agencia Africa — to get the most strategic value from our conversations about pivoting into creative work in Europe?'},
+
+  {id:'rafael',cat:'convo',accent:'var(--convo)',tag:{t:'Active',bg:'var(--convo-bg)',c:'var(--convo)'},title:'Rafael Azzi',where:'CEO, AZZI & CO · Personal friend',cvlinked:true,foot:{type:'cv',t:'Creative + ESG profile'},
+    kicker:'Friend → future collaborator',body:'He knows your creative potential personally. What your CV adds is professional credibility: ESG and sustainability work across three companies (On Running, Ambev, Necton) plus a Babson degree. That mix — creative instinct, business rigour, European base — is a genuinely rare combination for a growing PR agency.',
+    badges:[{t:'Personal friend',k:''},{t:'ESG background',k:'cv'},{t:'On Running · Ambev · Necton',k:'cv'},{t:'Europe-based bridge',k:'lnk'}],
+    cv:'Your On Running internship is especially relevant — a brand known for creative, premium positioning, which overlaps with AZZI & CO\'s world.',
+    prompt:'Draft a casual message to Rafael Azzi keeping the friendship warm while nudging toward a future collaboration — referencing my Europe base and recent experience'},
+
+  {id:'colirio',cat:'convo',accent:'var(--convo)',tag:{t:'Active',bg:'var(--convo-bg)',c:'var(--convo)'},title:'Colirio Design founder',where:'Close friend · Knows Tátil',cvlinked:true,foot:{type:'lnk',t:'Intro path to Tátil'},
+    kicker:'Your Tátil bridge',body:'Potentially your highest-leverage move right now. He\'s a close friend, he knows Tátil, and your CV gives him a solid story to relay: Ambev client-side experience, Agencia Africa creative background, London-based, visa needed. That\'s a warm, believable referral. Don\'t be shy about asking directly.',
+    badges:[{t:'Close friend',k:''},{t:'Tátil insider knowledge',k:'lnk'},{t:'Ambev story to relay',k:'cv'},{t:'Africa creative story',k:'cv'}],
+    cv:'He can tell Tátil: "I know someone who worked at Ambev and Agencia Africa, is based in London, and is looking for a visa sponsor." That\'s a compelling referral.',
+    prompt:'How should I ask my friend at Colirio Design to introduce me to someone at Tátil — what framing makes the ask easy for him?'},
+
+  {id:'italian',cat:'skill',accent:'var(--skill)',tag:{t:'6-month goal',bg:'var(--skill-bg)',c:'var(--skill)'},title:'Italian language',where:'Milan course · Private / small group',cvlinked:true,prog:15,
+    kicker:'Skill — 6-month target',body:'Smart and strategic. English plus Portuguese is already strong, but Italian within 6 months — even conversational — signals a commitment to Italy that no pitch letter can replicate. It directly unlocks the Ted Gushue relationship and Italy-based opportunities. Private or small-group lessons in Milan will get you there faster than apps. Concrete milestones: hold a 10-minute conversation by month 3, read a design magazine by month 6.',
+    badges:[{t:'6-month target',k:'lnk'},{t:'Milan — private/small group',k:''},{t:'Unlocks Ted Gushue path',k:'lnk'},{t:'EN + PT base → add IT',k:'cv'},{t:'Commitment signal',k:''}],
+    cv:'You\'re already fluent in English and Portuguese. Italian is the natural — and fastest — third language for a Portuguese speaker.',
+    prompt:'Give me a structured 6-month Italian learning plan — I\'m taking a course in Milan (private or small group) and want to reach conversational level'},
+
+  {id:'agents',cat:'skill',accent:'var(--skill)',tag:{t:'Planned',bg:'var(--skill-bg)',c:'var(--skill)'},title:'AI agents course',where:'Deploy agents · Replace a team',cvlinked:true,foot:{type:'lnk',t:'ESG reporting background'},
+    kicker:'Skill — salary leverage',body:'The bet is sound. Your ESG background is especially interesting: ESG reporting involves structured data gathering, regulatory monitoring, and repetitive research — exactly what agents automate well. You could position yourself as someone who runs ESG intelligence workflows autonomously. That\'s a specific, credible pitch, not just "I know AI."',
+    badges:[{t:'ESG automation angle',k:'cv'},{t:'Ambev + On Running data work',k:'cv'},{t:'Replaces team functions',k:''},{t:'Salary lever',k:'lnk'},{t:'Rare hybrid profile',k:'lnk'}],
+    cv:'Your Necton internship involved Bloomberg data, inflation reports, and structured weekly outputs — highly automatable workflows. That\'s a real story to tell.',
+    prompt:'What are the best practical AI agents courses right now — I want to build toward replacing team-level workflows, especially in ESG and research contexts'},
+
+  {id:'esg',cat:'strength',accent:'var(--build)',title:'ESG & sustainability',where:'On Running · Ambev · Necton · B Corp',cvlinked:true,
+    kicker:'CV strength — core credential',body:'Three real ESG roles: On Running (Zurich — reporting standards and B Corp application), Ambev (São Paulo — sourcing trends and B Corp advisory), and Necton (macro research with ESG investment focus). Plus an Environmental Sustainability concentration from Babson. This is a genuine specialism, not a line on a CV.',
+    badges:[{t:'On Running — Zurich',k:'cv'},{t:'Ambev — São Paulo',k:'cv'},{t:'Necton — ESG research',k:'cv'},{t:'Babson concentration',k:'cv'},{t:'B Corp specialist',k:'cv'}],
+    cv:'You did B Corp application work at both Ambev and On Running — unusually specific and valuable knowledge. Lead with it.',
+    prompt:null},
+
+  {id:'creative_cv',cat:'strength',accent:'var(--build)',title:'Creative & brand',where:'Agencia Africa · Heinz Mars Edition',cvlinked:true,
+    kicker:'CV strength — the Africa chapter',body:'Your July 2019 internship at Agencia Africa is the most creatively interesting entry in your CV. You worked on the award-winning Heinz Mars Edition, sourced a real scientist from the Florida Institute of Technology, did foreign location scouting, and built CEO-level presentations. A real creative brief, not just admin — your best story for design and creative agency pitches.',
+    badges:[{t:'Agencia Africa (2019)',k:'cv'},{t:'Heinz Mars Edition',k:'cv'},{t:'International sourcing',k:'cv'},{t:'CEO-level presentations',k:'cv'}],
+    cv:'The Mars Edition is your single most memorable story: a brand asked "what if ketchup could grow on Mars?" and you helped make it real by finding an actual astrobiologist.',
+    prompt:'Help me craft a compelling 3-sentence story about my work on the Heinz Mars Edition campaign at Agencia Africa — for pitches and introductions'},
+
+  {id:'positioning',cat:'strength',accent:'var(--build)',title:'Positioning edge',where:'London · Babson · EN+PT+IT',cvlinked:true,
+    kicker:'CV strength — the rare combination',body:'The combination is unusual: US-educated (Babson, known for entrepreneurship), London-based with a UK address, Latam roots and network, an ESG credential, creative agency experience, and soon a third language. No single element is extraordinary — together they form a rare profile, especially for agencies bridging Latam and European markets.',
+    badges:[{t:'London, SW1 address',k:'cv'},{t:'Babson — 2024',k:'cv'},{t:'EN + PT fluent',k:'cv'},{t:'IT in progress (6mo)',k:'lnk'},{t:'Latam + Europe network',k:''}],
+    cv:'Graduating Babson in 2024 means you\'re very recent — youth, energy, digital nativity. Lean into it rather than apologising for limited years of experience.',
+    prompt:null}
+];
+
+const grid=document.getElementById('grid');
+COLS.forEach(col=>{
+  const wrap=document.createElement('div');
+  const items=ITEMS.filter(i=>i.cat===col.cat);
+  wrap.innerHTML=`<div class="col-head"><span class="swatch" style="background:${col.color}"></span>${col.title}<span class="badge-n">${items.length}</span></div>`;
+  items.forEach(it=>{
+    let foot='';
+    if(it.foot){const ic=it.foot.type==='cv'?ICON_CV:ICON_LINK;foot=`<span class="cvtag ${it.foot.type==='cv'?'cv':'lnk'}">${ic}${it.foot.t}</span>`;}
+    let prog=it.prog!=null?`<div class="prog"><i data-w="${it.prog}"></i></div>`:'';
+    let tag=it.tag?`<span class="tag" style="background:${it.tag.bg};color:${it.tag.c}">${it.tag.t}</span>`:'';
+    const card=document.createElement('div');
+    card.className='card';card.dataset.cat=it.cat;card.dataset.cv=it.cvlinked?1:0;
+    card.style.setProperty('--accent',it.accent);
+    card.onclick=()=>openDrawer(it.id);
+    card.innerHTML=`${tag}<h3>${it.title}</h3><div class="where">${it.where}</div>${foot}${prog}`;
+    wrap.appendChild(card);
+  });
+  grid.appendChild(wrap);
+});
+setTimeout(()=>document.querySelectorAll('.prog i').forEach(b=>b.style.width=b.dataset.w+'%'),200);
+
+// filters
+document.querySelectorAll('.chip').forEach(chip=>{
+  chip.onclick=()=>{
+    document.querySelectorAll('.chip').forEach(c=>c.classList.remove('on'));
+    chip.classList.add('on');
+    const f=chip.dataset.f;
+    document.querySelectorAll('.card').forEach(card=>{
+      let show=f==='all'||(f==='cvlinked'?card.dataset.cv==='1':card.dataset.cat===f);
+      card.classList.toggle('dim',!show);
+    });
+  };
+});
+
+// drawer
+function badge(b){
+  const cls=b.k==='cv'?'cv':b.k==='lnk'?'lnk':'';
+  const ic=b.k==='cv'?ICON_CV:b.k==='lnk'?ICON_LINK:'';
+  return `<span class="d-badge ${cls}">${ic}${b.t}</span>`;
+}
+function openDrawer(id){
+  const it=ITEMS.find(i=>i.id===id);if(!it)return;
+  const c=document.getElementById('drawer-content');
+  c.innerHTML=`
+    <div class="d-kicker" style="color:${it.accent}">${it.kicker}</div>
+    <h2>${it.title}</h2>
+    <div class="d-body">${it.body}</div>
+    <div class="d-badges">${it.badges.map(badge).join('')}</div>
+    ${it.cv?`<div class="cvbox"><div class="lbl">${ICON_CV} From your CV</div><p>${it.cv}</p></div>`:''}
+    ${it.prompt?`<button class="d-next" onclick="ask(this)" data-p="${it.prompt.replace(/"/g,'&quot;')}">${ICON_ARROW}<span>Draft this with Claude</span></button>`:''}
+  `;
+  document.getElementById('drawer').classList.add('show');
+  document.getElementById('scrim').classList.add('show');
+}
+function closeDrawer(){
+  document.getElementById('drawer').classList.remove('show');
+  document.getElementById('scrim').classList.remove('show');
+}
+function ask(btn){
+  const p=btn.dataset.p;
+  if(window.parent&&window.parent!==window){/* embedded */}
+  try{navigator.clipboard.writeText(p);}catch(e){}
+  btn.querySelector('span').textContent='Prompt copied — paste into Claude';
+  setTimeout(()=>{btn.querySelector('span').textContent='Draft this with Claude';},2400);
+}
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeDrawer();});
+</script>
+</body>
+</html>
